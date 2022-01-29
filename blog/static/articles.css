@@ -1,0 +1,20 @@
+.blog-card{
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(220, 220, 220, 0.247);
+    margin: 30px 0;
+}
+.blog-title a{
+    font-size: 25px;
+    color: black;
+}
+.blog-author{
+    font-size: 20px;
+}
+
+.blog-date{
+    color: cadetblue;
+}
+.blog-content{
+margin: 10px 0;
+}

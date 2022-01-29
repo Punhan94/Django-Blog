@@ -1,0 +1,54 @@
+.meqaleler{
+    width: 100%;
+
+}
+
+.meqale{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    padding: 1em;
+    border-bottom: 2px solid #797878;
+    justify-content: space-between;
+}
+
+.basliq{
+    text-align: center;
+}
+
+.yazilar>b{
+    font-size: 24px;
+      color: black;
+    margin-bottom: 2em;
+}
+
+.yazilar{
+    width: 50%;
+}
+
+.yazilar>small{
+    color: #4c4c4c;
+    font-size: 12px;
+}
+
+.sekil{
+    width: 40%;
+    height: 140px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sekil>img{
+    aspect-ratio: auto;
+    width: 80%;
+
+}
+
+.mycomment{
+    background-color: #d9d9d9;
+    padding: 20px;
+    border: 1px solid #8a8a8a;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}

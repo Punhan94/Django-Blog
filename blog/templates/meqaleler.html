@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{#{%  block css %}#}
+{#    <link rel="stylesheet" href="/static/mystyle.css">#}
+{#    {% endblock css %}#}
+{% block body %}
+
+
+    <h1 class="basliq">Meqalelerimiz</h1>
+    <form method="get" style="float: right" >
+        <input type="text" name="keyword" class="put-sm">
+        <button type="submit" class="btn btn-success">Axtar </button>
+    </form>
+    <br>
+
+    <hr>
+    <br>
+    {% if form  %}
+    <div  class="meqaleler"">
+        {% for i in form %}
+            <div class="meqale" >
+                <div class="yazilar">
+                    <b>Title: {{ i.title }}</b>
+                    <p>{{ i.content| truncatewords:9 | safe}}</p>
+                    <small>{{ i.created_date }}</small>
+                    <a class="btn btn-link"  href="/articles/MeqaleGoster/{{ i.id }}">
+                        meqaleni oxu
+                    </a>
+                </div>
+
+                <div class="sekil">
+                    {% if i.article_images  %}
+                    <img src="{{ i.article_images.url }}" alt="">
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <h1 style="color: red; text-align: center">Axtardiginiz meqale mevcut deyil</h1>
+    {% endif %}
+
+{% endblock %}

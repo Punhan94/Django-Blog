@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+    <h1>Title: {{ form.title }}</h1>
+    {% if form.article_images  %}
+    <img style="width: 400px" src="{{ form.article_images.url }}" alt="">
+    {% endif %}
+    <br>
+      <p>{{ form.content | safe }}</p>
+    <br>
+    
+      <small>{{ form.created_date }}</small>
+    <br>
+    <hr>
+    <h3>Serhler</h3>
+    <br>
+
+    {% if comments %}
+        {% for comment in comments %}
+            <div class="mycomment">
+                <h5 style="font-weight: bold">{{ comment.comment_author }}</h5>
+                <p>{{ comment.comment }}</p>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+    <hr>
+    <br>
+    <br>
+    <h3>Serhinizi yazin</h3>
+        <br>
+
+    <form method="post" action="/articles/comment/{{ form.id }}">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea name="c_content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+     <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{#    <div class="form-group">#}
+{#    <form method="post" >#}
+{#    {% csrf_token %}#}
+{#    {{ form1.as_p }}#}
+{#    <button type="submit" class="btn btn-danger">Serh yaz</button>#}
+{#    </form>#}
+{#    </div>#}
+
+
+{% endblock %}
